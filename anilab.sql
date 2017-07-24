@@ -1,0 +1,49 @@
+-- phpMyAdmin SQL Dump
+-- version 4.5.2
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: 24-Jul-2017 às 22:22
+-- Versão do servidor: 5.7.9
+-- PHP Version: 5.6.16
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `anilab`
+--
+CREATE DATABASE IF NOT EXISTS `anilab` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `anilab`;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuario`
+--
+
+DROP TABLE IF EXISTS `usuario`;
+CREATE TABLE IF NOT EXISTS `usuario` (
+  `USU_INT_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `USU_STR_LAB` varchar(255) NOT NULL,
+  `USU_STR_NOME` varchar(255) NOT NULL,
+  `USU_STR_USER` varchar(255) NOT NULL,
+  `USU_STR_SENHA` varchar(255) NOT NULL,
+  `USU_STR_EMAIL` varchar(255) NOT NULL,
+  `USU_STR_CPF` varchar(11) NOT NULL,
+  `USU_INT_TIPO` int(1) NOT NULL,
+  PRIMARY KEY (`USU_INT_ID`),
+  UNIQUE KEY `USU_STR_USER` (`USU_STR_USER`),
+  UNIQUE KEY `USU_STR_EMAIL` (`USU_STR_EMAIL`),
+  UNIQUE KEY `USU_STR_LAB` (`USU_STR_LAB`)
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
